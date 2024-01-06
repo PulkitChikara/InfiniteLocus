@@ -103,8 +103,8 @@ const data = [
 const ProductsPage = () => {
     return (
         <div className='w-full h-full p-5 pl-0'>
-            <div className='w-full h-full flex flex-col bg-[#191919] opacity-90 text-white text-xl rounded-xl'>
-                <div className='text-6xl px-6 py-8 font-semibold'>
+            <div className='w-full h-full flex flex-col opacity-90 text-white text-xl rounded-xl'>
+                <div className='text-black text-6xl px-6 py-8 font-semibold'>
                     Products Page
                 </div>
                 <div className='p-4'>
