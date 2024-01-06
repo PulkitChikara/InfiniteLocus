@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 import { IoInfiniteSharp } from "react-icons/io5";
 
@@ -12,13 +12,23 @@ import { TbLogout } from "react-icons/tb";
 
 
 const SideBar = () => {
-  const [active,setActive] = useState("dashboard")
-  console.log(active);
+  const [active,setActive] = useState(localStorage.getItem('active') || 'dashboard');
+
+//   useEffect(() => {
+//     localStorage.setItem('active', active);
+//     localStorage.setItem('active', active);
+// }, [active]);
+
+  function handleButtonClick(st) {
+    setActive(st);
+  };
+
+
   return (
     <div className='w-full h-full p-5'>
       <div className='w-full min-h-[95vh] h-full flex flex-col gap-1 bg-[#191919] opacity-90 text-white text-xl rounded-xl p-3'>
         <a href="/dashboard">
-          <div className='flex items-center gap-2 px-4 pt-4 pb-5 border-b border-gray-500 mb-2'>
+          <div onClick={()=>setActive("dashboard")} className='flex items-center gap-2 px-4 pt-4 pb-5 border-b border-gray-500 mb-2'>
             <div className='text-3xl'>
               <IoInfiniteSharp />
             </div>

@@ -24,9 +24,11 @@ const ProductList = ({data}) => {
                 Category
             </div>
         </div>
-        {data.map((item)=>(
-            <ProductCard item={item}/>
-        ))}
+        <div className='w-full max-h-[600px] overflow-y-scroll'>
+            {data.map((item)=>(
+                <ProductCard item={item}/>
+            ))}
+        </div>
     </div>
   )
 }
